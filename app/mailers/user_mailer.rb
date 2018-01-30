@@ -2,8 +2,12 @@ class UserMailer < ApplicationMailer
 
 default from: "hoorayfun123@gmail.com"
 
-  def welcome_email()
+puts "*** UserMailer initialize***"
+
+  def welcome(user)
     p "welcome_email action fired ***"
+    @user = user
+    mail(to: @user.email, subject: "Welcome!!")
   end
 
 end
